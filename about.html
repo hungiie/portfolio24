@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About</title>
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  </head>
+
+
+  <body>
+    <header>
+      <nav class="nav-container">
+        <div class="nav-div-1">
+          <a class="button-nav nav-home" href="index.html">H.</a>
+        </div>
+        <div class="nav-div-2">
+          <a class="button-nav nav-project" href="index.html">Projects</a>
+          <a class="button-nav nav-about" href="about.html">About</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="about-section">
+      <div class="about-container">
+        <div class="grid about-two-column">
+
+          <div class="about-image-container">
+            <img class="about-image" src="img/about.jpg" width="881" height="1566">
+          </div>
+
+          <div class="about-info-container">
+            <!-- <div class="face-container">
+              <div class="eye-container eye-container-about">
+                <div class="eye">
+                  <img class="eye-white" src="img/eye.png" width="1658" height="2656" alt="white oval">
+                  <img class="ball" id="left-ball" src="img/ball.png" width="864" height="1003" alt="eye pupil">
+                </div>
+                <div class="eye">
+                  <img class="eye-white" src="img/eye.png" width="1658" height="2656" alt="white oval">
+                  <img class="ball" id="right-ball" src="img/ball.png" width="864" height="1003" alt="eye pupil">
+                </div>
+              </div>
+              <img class="mouth mouth-about" src="img/mouth.png" width="67" height="25" alt="white arc">
+            </div> -->
+            <p class="about-text"><span id="words">Hi!</span></p>
+            <p class="project-analysis-text slightly-bigger bold one-margin-top white no-margin-bottom">My name is Hung, I am a UX researcher, UI designer, and design engineer.</p>
+            <p class="project-analysis-text slightly-bigger bold one-margin-top white">I am passionate and driven by how social media shapes our fast-changing digital habits, and how modern interfaces have evolved to optimize for our attentive capacity.</p>
+            <p class="project-analysis-text grey">Throughout my undergraduate degree, I have developed many skills such as conducting researches, prototyping, and building apps & websites. I also get to work with many different prototyping softwares (Figma, UXPin, ProtoPie, or directly building apps with React Native).</p>
+
+            <p class="project-analysis-text grey more-margin-bottom">In the future, I aspire to be an adaptive designer and researcher, staying attuned to our ever-evolving digital habits and expectations to create meaningful, impactful experiences.</p>
+
+            <div class="flex">
+              <a class="button arrow-button bold" href="https://drive.google.com/file/d/1wvcNt8muT3iDGfUUVi58yDvfnMNgPrIe/view?usp=share_link" target="_blank">Résumé <span class="text-arrow">&rarr;</span></a>
+              <a class="button arrow-button button-margin-left bold" href="https://www.linkedin.com/in/hung-tran-profile/" target="_blank">LinkedIn <span class="text-arrow">&rarr;</span></a>
+              <a class="button arrow-button button-margin-left bold" href="mailto:dht4@sfu.ca" target="_blank">dht4@sfu.ca <span class="text-arrow">&rarr;</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="footer-section">
+      <div class="footer-container">
+        <p class="footer bold">Designed and coded by me.</p>
+        <p class="footer bold">dht4@sfu.ca</p>
+      </div>
+    </section>
+
+
+    <script>
+      var balls = document.getElementsByClassName("ball");
+      document.onmousemove = function(){
+        var x = event.clientX * 100 / 1600 + "%"
+        var y = event.clientY * 100 / 900 + "%"
+
+        for (var i=0; i<2; i++){
+          balls[i].style.left = x;
+          balls[i].style.top = y;
+          balls[i].style.transform = "translate(-"+x+", -"+y+")";
+        }
+      }
+    </script>
+
+    <script type="text/javascript">
+      (function() {
+        var words = ["Hi!", "Xin chào!"], i=0;
+        setInterval(function() {
+          $('#words').fadeOut(function(){
+            $(this).html(words[(i=(i+1) % words.length)]).fadeIn();
+          });
+        }, 2500);
+      })();
+    </script>
+
+  </body>
+</html>
